@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+
   post '/register' => 'auth#register'
   # patch '/confirm' => 'auth#confirm'
-  post '/login' => 'auth#login'
+  patch '/login' => 'auth#login'
   delete '/logout/:id' => 'auth#logout'
 
   resources :users, except: [:new, :edit]
@@ -11,6 +12,4 @@ Rails.application.routes.draw do
   resources :trips, except: [:new, :edit] do
     resources :destinations, except: [:new, :edit]
   end
-
-
 end
