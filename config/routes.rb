@@ -9,7 +9,6 @@ Rails.application.routes.draw do
 
   resources :books, except: [:new, :edit]
 
-  resources :trips, except: [:new, :edit] do
-    resources :destinations, except: [:new, :edit]
-  end
+  resources :destinations, except: [:new, :edit]
+
 end

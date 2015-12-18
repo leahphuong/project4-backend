@@ -3,10 +3,14 @@ class CreateDestinations < ActiveRecord::Migration
     create_table :destinations do |t|
       t.string :country
       t.string :city
-      t.string :est_cost
       t.string :trip_length
-      t.string :description
-      t.references :trip, index: true, foreign_key: true
+      t.string :est_cost
+      t.string :start_date
+      t.string :end_date
+      t.text :description
+      t.float :longitude
+      t.float :latitude
+      t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false
     end
